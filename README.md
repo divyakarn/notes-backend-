@@ -60,7 +60,7 @@ cd notes-backend-
 ### 2. Install dependencies
 
 ```bash
-python3 -m pip install fastapi uvicorn sqlalchemy alembic python-jose passlib bcrypt python-multipart
+pip install -r requirements.txt
 ```
 
 ### 3. Run database migrations
