@@ -27,7 +27,7 @@ async def get_current_user(token:str=Depends(oauth2_scheme) ,db:Session = Depend
         payload = jwt.decode(token,SECRET_KEY ,algorithms=[ALGORITHM])
         username = payload.get("sub")
         if username is None:
-            raise HTTPException(status_code=400,detail="Invalid Token")
+            raise HTTPException(status_code=401,detail="Invalid Token")
         user = db.query(db_model.UserDB).filter(db_model.UserDB.username == username).first()
         if user is None :
             raise HTTPException(status_code=401,detail="User Not found")

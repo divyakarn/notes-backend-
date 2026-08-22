@@ -26,7 +26,7 @@ class UserResponse(BaseModel):
     id: int
     username:str
     class Config :
-        from_attribute = True
+        from_attributes = True
 
 
 
